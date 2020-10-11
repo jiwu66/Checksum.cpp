@@ -1,3 +1,22 @@
+// A checksum is a small-sized value generated from some digital data. The checksum is used to
+// detect errors in transmission or storage of the data. The checksum is sent or stored with its
+// corresponding data. After data together with the checksum is sent or retrieved, a check for errors
+// is performed on the data and confirmed using the checksum value.
+// For example, an ASCII character may be represented as seven bits (a value between 0 and 127). If
+// you are storing such a character as a byte, you can just have the leading bit always be zero. If you
+// are transmitting an ASCII character, you could set this leading bit to 0 if the number of bits set to
+// 1 is even, and 1 if the number of bits set to 1 is odd. Thus, a capital-G is stored as the seven bits
+// 1000111, and because the number of bits set to 1 is even, the leading bit would be set to zero, so a
+// capital G would be encoded as 01000111. Capital-H and -I are stored as 1001000 and 1001001,
+// respectively, and the first has two bits set to 1 while the second has three bits set to 1, so these
+// would be transmitted as 01001000 and 11001001, respectively. Now, if during the transmission
+// of one of these characters, if noise were to cause one of the bits to flip (change from a 0 to a 1 or
+// vice versa), the receiver could determine the transmitted character is invalid. For example, if
+// either 00110111 or 11010000 was received, the receiver would know that these are invalid, as the
+// first byte has five bits set to 1 after the first bit, and the second has two bits set to 1 after the first
+// bit. Consequently, the receiver would know that one (or three or five or seven) bits were flipped
+// during transmission and could request that the byte be resent. 
+
 #include <iostream>
 #include <climits>
 
